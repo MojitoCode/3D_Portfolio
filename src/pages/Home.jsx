@@ -1,6 +1,7 @@
-import { Suspense } from 'react'
-import { Canvas } from '@react-three/fiber'
-import Loader from '../components/Loader'
+import { Suspense } from 'react';
+import { Canvas } from '@react-three/fiber';
+import Loader from '../components/Loader';
+import Island from '../models/Island';
 {/*START HERE NEXT - 25:16*/}
 
 {/* USE THIS LATER:
@@ -27,6 +28,7 @@ const Home = () => {
           <spotLight />
           <hemisphereLight />
           {/*pick up at: 35.22*/}
+          <Island />
         </Suspense>
       </Canvas>
     </section>
