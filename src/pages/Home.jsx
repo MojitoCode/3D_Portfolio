@@ -21,6 +21,12 @@ const Home = () => {
       >
         <Suspense fallback={<Loader />}>
           {/*Suspense is responsible for managing the 3d render*/}
+          <directionalLight />
+          <ambientLight />
+          <pointLight />
+          <spotLight />
+          <hemisphereLight />
+          {/*pick up at: 35.22*/}
         </Suspense>
       </Canvas>
     </section>
