@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import Loader from '../components/Loader';
 import Island from '../models/Island';
+import Sky from '../models/Sky';
 {/*START HERE NEXT - 25:16*/}
 
 {/* USE THIS LATER:
@@ -13,6 +14,22 @@ import Island from '../models/Island';
 */}
 
 const Home = () => {
+  const adjustIslandForScreenSize = () => {
+    let screenScale = null;
+    let screenPosition = [0, -6.5, -43];
+    let islandRotation = [0.1, 4.7, 0];
+    
+    if(window.innerWidth < 768){
+      screenScale = [0.9, 0.9, 0.9];
+    } else {
+      screenScale = [1, 1, 1];
+    }
+
+    return [screenScale, screenPosition, islandRotation];
+  }
+
+  const [islandScale, islandPosition, islandRotation] = adjustIslandForScreenSize();
+
   return (
     <section className='w-full h-screen relative'>
       {/*'react-three/fiber' component install required for this feature to function as expected*/}
@@ -22,13 +39,24 @@ const Home = () => {
       >
         <Suspense fallback={<Loader />}>
           {/*Suspense is responsible for managing the 3d render*/}
-          <directionalLight />
-          <ambientLight />
-          <pointLight />
-          <spotLight />
-          <hemisphereLight />
-          {/*pick up at: 35.22*/}
-          <Island />
+          <directionalLight 
+            position = {[1,1,1]}
+            intensity = {[2]}
+          />
+          <ambientLight 
+            intensity = {0.5}
+          />
+          <hemisphereLight 
+            skyColor = "#b1e1ff"
+            groundColor = "#000000"
+            intensity = {1}
+          />
+          <Sky />
+          <Island 
+            position = {islandPosition}
+            scale = {islandScale}
+            rotation = {islandRotation}
+          />
         </Suspense>
       </Canvas>
     </section>
