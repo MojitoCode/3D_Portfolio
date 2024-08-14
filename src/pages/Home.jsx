@@ -5,6 +5,7 @@ import Island from '../models/Island';
 import Sky from '../models/Sky';
 import Bird from '../models/Bird';
 import Plane from '../models/Plane';
+import HomeInfo from '../components/HomeInfo';
 
 const Home = () => {
   const [isRotating, setIsRotating] = useState(false);
@@ -44,9 +45,9 @@ const Home = () => {
   return (
     <section className='w-full h-screen relative'>
     {/*'react-three/fiber' component install required for this feature to function as expected*/}
-    
+
     <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
-      POPUP
+      { currentStage && <HomeInfo currentStage={currentStage} />}
     </div> 
     
 
