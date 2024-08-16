@@ -29,6 +29,8 @@ const Contact = () => {
       setIsLoading(true);
       // TODO: Show Success Message
       // TODO: Hide an Alert
+      //reset form fields once message sends
+      setForm({ name: '', email: '', message: ''})
     }). catch((error) => {
       setIsLoading(false);
       console.log(error);
