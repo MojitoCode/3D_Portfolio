@@ -3,12 +3,16 @@ import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
 import Loader from "../components/Loader";
 import Fox from "../models/Fox";
+import useAlert from "../hooks/useAlert";
+import Alert from "../components/Alerts";
 
 const Contact = () => {
   const formRef = useRef(null);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [isLoading, setIsLoading] = useState(false);
   const [currentAnimation, setCurrentAnimation] = useState("idle");
+
+  const { alert, showAlert, hideAlert } = useAlert();
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -36,20 +40,21 @@ const Contact = () => {
       )
       .then(() => {
         setIsLoading(true);
-        // TODO: Show Success Message
-        // TODO: Hide an Alert
+        showAlert({ show: true, text: 'Message Sent Successfully!', type: 'success' });
 
         setTimeout(() => {
-          setCurrentAnimation('idle')
+          hideAlert(false);
+          setCurrentAnimation('idle');
           //reset form fields once message sends
-          setForm({ name: "", email: "", message: "" })
-        }, [3000])
+          setForm({ name: "", email: "", message: "", });
+          setIsLoading(false);
+        }, [3000]);
       })
       .catch((error) => {
         setIsLoading(false);
         setCurrentAnimation("idle");
         console.log(error);
-        // TODO: Show an Error Message
+        showAlert({ show: true, text: 'Failed to Send Message. Please try again later.', type: 'danger' });
       });
   };
 
@@ -58,6 +63,8 @@ const Contact = () => {
 
   return (
     <section className="relative flex lg:flex-row flex-col max-container">
+      {alert.show && <Alert {...alert} />}
+
       <div className="flex-1 min-w-[50%] flex flex-col">
         <h1 className="head-text">Get in Touch</h1>
 
@@ -109,8 +116,8 @@ const Contact = () => {
           </label>
           <button
             type="submit"
-            className="btn"
             disabled={isLoading}
+            className="btn"
             onFocus={handleFocus}
             onBlur={handleBlur}
           >
