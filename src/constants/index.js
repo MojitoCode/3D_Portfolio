@@ -62,12 +62,24 @@ export const skills = [
 
 export const experiences = [
     {
-        title: "",
-        company_name: "",
-        icon: null,
+        title: "Test Job Title 1",
+        company_name: "Test Company Name 1",
+        icon: '../assets/images/meta.png',
         iconBg: "#accbe1",
-        date: "",
-        points: [],
+        date: "1/1/2015",
+        points: [
+            "some text", 
+            "some more text",],
+    },
+    {
+        title: "Test Job Title 2",
+        company_name: "Test Company Name 2",
+        icon: '../assets/images/shopify.png',
+        iconBg: "#accbe1",
+        date: "1/1/2016",
+        points: [
+            "some text", 
+            "some more text",],
     },
 ];
 
