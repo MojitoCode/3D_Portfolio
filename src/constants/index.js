@@ -57,7 +57,7 @@ export const skills = [
         imageUrl: typescript,
         name: "TypeScript",
         type: "Frontend",
-    }
+    },
 ];
 
 export const experiences = [
@@ -98,15 +98,29 @@ export const socialLinks = [
         name: 'LinkedIn',
         iconUrl: linkedin,
         link: 'https://www.linkedin.com/in/skelly-/',
-    }
+    },
 ];
 
 export const projects = [
     {
-        iconUrl: null,
-        theme: 'btn-back-red',
-        name: '',
-        description: '',
-        link: '',
-    }
+        iconUrl: '../assets/icons/arrow.svg',
+        theme: 'btn-back-yellow',
+        name: 'name text 1',
+        description: 'desc. text',
+        link: 'https://www.linkedin.com/in/skelly-',
+    },
+    {
+        iconUrl: '../assets/icons/arrow.svg',
+        theme: 'btn-back-green',
+        name: 'name text 2',
+        description: 'desc. text',
+        link: 'https://www.linkedin.com/in/skelly-',
+    },
+    {
+        iconUrl: '../assets/icons/arrow.svg',
+        theme: 'btn-back-blue',
+        name: 'name text 3',
+        description: 'desc. text',
+        link: 'https://www.linkedin.com/in/skelly-',
+    },
 ];

@@ -40,13 +40,17 @@ const Contact = () => {
       )
       .then(() => {
         setIsLoading(true);
-        showAlert({ show: true, text: 'Message Sent Successfully!', type: 'success' });
+        showAlert({
+          show: true,
+          text: "Message Sent Successfully!",
+          type: "success",
+        });
 
         setTimeout(() => {
           hideAlert(false);
-          setCurrentAnimation('idle');
+          setCurrentAnimation("idle");
           //reset form fields once message sends
-          setForm({ name: "", email: "", message: "", });
+          setForm({ name: "", email: "", message: "" });
           setIsLoading(false);
         }, [3000]);
       })
@@ -54,7 +58,11 @@ const Contact = () => {
         setIsLoading(false);
         setCurrentAnimation("idle");
         console.log(error);
-        showAlert({ show: true, text: 'Failed to Send Message. Please try again later.', type: 'danger' });
+        showAlert({
+          show: true,
+          text: "Failed to Send Message. Please try again later.",
+          type: "danger",
+        });
       });
   };
 
@@ -66,7 +74,7 @@ const Contact = () => {
       {alert.show && <Alert {...alert} />}
 
       <div className="flex-1 min-w-[50%] flex flex-col">
-        <h1 className="head-text">Get in Touch</h1>
+        <h1 className="blue-gradient_text head-text">Get in Touch</h1>
 
         <form
           className="w-full flex flex-col gap-7 mt-14"
