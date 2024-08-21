@@ -5,6 +5,7 @@ import Loader from "../components/Loader";
 import Fox from "../models/Fox";
 import useAlert from "../hooks/useAlert";
 import Alert from "../components/Alerts";
+import Socials from "../components/Socials";
 
 const Contact = () => {
   const formRef = useRef(null);
@@ -70,7 +71,7 @@ const Contact = () => {
   const handleBlur = () => setCurrentAnimation("idle");
 
   return (
-    <section className="relative flex lg:flex-row flex-col max-container">
+    <section className="relative flex lg:flex-row flex-col max-container h-full">
       {alert.show && <Alert {...alert} />}
 
       <div className="flex-1 min-w-[50%] flex flex-col">
@@ -154,6 +155,9 @@ const Contact = () => {
           </Suspense>
         </Canvas>
       </div>
+
+      <hr className="text-slate-600"/>
+      <Socials />
     </section>
   );
 };

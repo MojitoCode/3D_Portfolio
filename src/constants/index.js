@@ -9,8 +9,12 @@ import {
     nodejs,
     react,
     tailwindcss,
-    typescript
+    typescript,
+    car,
+
 } from "../assets/icons";
+
+import { starbucks } from "../assets/images"
 
 export const skills = [
     {
@@ -64,7 +68,7 @@ export const experiences = [
     {
         title: "Test Job Title 1",
         company_name: "Test Company Name 1",
-        icon: '../assets/images/meta.png',
+        icon: car,
         iconBg: "#accbe1",
         date: "1/1/2015",
         points: [
@@ -74,7 +78,7 @@ export const experiences = [
     {
         title: "Test Job Title 2",
         company_name: "Test Company Name 2",
-        icon: '../assets/images/shopify.png',
+        icon: car,
         iconBg: "#accbe1",
         date: "1/1/2016",
         points: [
@@ -103,21 +107,21 @@ export const socialLinks = [
 
 export const projects = [
     {
-        iconUrl: '../assets/icons/arrow.svg',
+        iconUrl: car,
         theme: 'btn-back-yellow',
         name: 'name text 1',
         description: 'desc. text',
         link: 'https://www.linkedin.com/in/skelly-',
     },
     {
-        iconUrl: '../assets/icons/arrow.svg',
+        iconUrl: car,
         theme: 'btn-back-green',
         name: 'name text 2',
         description: 'desc. text',
         link: 'https://www.linkedin.com/in/skelly-',
     },
     {
-        iconUrl: '../assets/icons/arrow.svg',
+        iconUrl: car,
         theme: 'btn-back-blue',
         name: 'name text 3',
         description: 'desc. text',
