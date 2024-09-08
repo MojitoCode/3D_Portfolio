@@ -156,8 +156,10 @@ const Contact = () => {
         </Canvas>
       </div>
 
-      <hr className="text-slate-600"/>
-      <Socials />
+      <div>
+        <hr className="text-slate-600" />
+        <Socials />
+      </div>
     </section>
   );
 };
